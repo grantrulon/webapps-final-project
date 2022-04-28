@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-function Stores() {
-  const [stores, setStores] = useState([]);
+function projects() {
+  const [Projects, setProjects] = useState([]);
 
   //Analogous to ComponentDidMount; runs on component's mount and first render; runs once
   useEffect(() => {
-    fetch(`http://localhost:8000/stores`)
+    fetch(`http://localhost:8000/Projects`)
       .then((body) => body.json())
-      .then((json) => setStores(() => [...json]));
+      .then((json) => setProjects(() => [...json]));
   }, []);
 
   return (
     <>
-      <p>Hello this is stores route</p>
+      <p>Hello this is Projects route</p>
       <ul>
-        {stores.map((a_store) => (
-          <li key={a_store.store_id}>
-            <p>{a_store.name}</p>
+        {Projects.map((a_project) => (
+          <li key={a_project.project_id}>
+            <p>{a_project.name}</p>
           </li>
         ))}
       </ul>
@@ -24,4 +24,4 @@ function Stores() {
   );
 }
 
-export default Stores;
+export default Projects;
