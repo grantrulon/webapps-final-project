@@ -1,0 +1,45 @@
+Whats left to do for the whole project:
+ - backend 
+    - todo routes
+        - GET
+        - POST
+        - PUT 
+        - DELETE
+        - PATCH
+ frontend
+    - functionaly
+        - AddProject.js
+        - EditProject.js
+        - EditTodo.js
+    - user interface - stuff to make pretty
+        - Projects.js
+            - /
+            - /projects
+        - Project.js
+            - /:project_id
+        - AddProject.js
+            - /projects/add 
+        - EditProject.js    
+            - /projects/edit
+        - Todos.js
+            - /:project_id
+            - /:project_id/todos
+        - Todo.js
+            - /:project_id/todos/:todo_id
+        - AddTodo.js
+            - /:project_id/todos/add
+        - EditTodo.js
+            - /project_id/todos/:todo_id/edit
+
+To be done before Monday 5/2/22
+Heather:
+    -> frontend, EditProject.js and EditTodo.js functionality
+
+Grant:
+    -> backend, all database requests
+
+Colby:
+    -> frontend, AddProject.js functionality
+
+
+
