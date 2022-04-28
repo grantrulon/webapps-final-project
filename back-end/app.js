@@ -4,15 +4,15 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 
-import { indexRouter } from "./routes/index.js";
-import { usersRouter } from "./routes/users.js";
+import { projectsRouter } from "./routes/projects.js";
+import { todosRouter } from "./routes/todos.js";
 import connect from "./lib/db.js";
 
 const app = express();
 
 app.set("db", async (collection) => {
   const mongo = await connect();
-  return mongo.db("mongodb_lab").collection(collection);
+  return mongo.db("projects_todos").collection(collection);
 });
 
 app.use(logger("dev"));
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(path.resolve(), "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/projects", projectsRouter);
+app.use("/projects/:project_id/todos", todosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

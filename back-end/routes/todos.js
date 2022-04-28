@@ -2,9 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-/* GET home page. */
+/* GET users listing. */
 router.get("/", function (req, res, next) {
-  res.send({ message: "Hello, world!" });
+  res.json({ message: "respond with a body" });
 });
 
-export { router as indexRouter };
+export { router as todosRouter };
