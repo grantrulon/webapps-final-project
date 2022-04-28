@@ -2,42 +2,45 @@
 
 mongo mongodb://127.0.0.1:27017 <<EOF
 
+use projects_todos
+db.projects.drop()
+db.todos.drop()
 db.createCollection("projects"); 
 db.createCollection("todos");
-db.projects.insertMany(
+db.projects.insertMany([
 	{
-	project_id: 1
-	title: "Project 1"
+	project_id: 1,
+	title: "Project 1",
 	},
 	{
-	project_id: 2
-	title: "Project 2"
+	project_id: 2,
+	title: "Project 2",
 	},
 	{
-	project_id: 3
-	title: "Project 3"
+	project_id: 3,
+	title: "Project 3",
 	},
-);
-db.todos.insertMany(
+]);
+db.todos.insertMany([
 	{
-	todo_id: 1
-	title: "todo 1"
-	description: "a description of todo 1"
-	completed: False
-	project_id: 1
-	},
-	{
-	todo_id: 2
-	title: "todo 2"
-	description: "a description of todo 2"
-	completed: False
-	project_id: 2
+	todo_id: 1,
+	title: "todo 1",
+	description: "a description of todo 1",
+	completed: false,
+	project_id: 1,
 	},
 	{
-	todo_id: 3
-	title: "todo 3"
-	description: "a description of todo 3"
-	completed: False
-	project_id: 3
+	todo_id: 2,
+	title: "todo 2",
+	description: "a description of todo 2",
+	completed: false,
+	project_id: 2,
 	},
-);
+	{
+	todo_id: 3,
+	title: "todo 3",
+	description: "a description of todo 3",
+	completed: false,
+	project_id: 3,
+	},
+]);
