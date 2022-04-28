@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-function New() {
+function AddTodo() {
   const [todoTitle, setTitle] = useState();
   const [todoDescription, setDescription] = useState();
   const [todoCompleted, setCompleted] = useState();
   const [todo_id, setId] = useState();
   const {project_id} = useParams();
 
-  function addNewItem(e){
+  function AddTodo(e){
     e.preventDefault();
     fetch(`http://localhost:8000/projects/${project_id}/todos/`, {
       method: "POST",
-      body: JSON.stringify({name: todoTitle, quantity: Number(todoDescription), price: Number(todoCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
+      body: JSON.stringify({title: todoTitle, quantity: Number(todoDescription), price: Number(todoCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
@@ -21,8 +21,8 @@ function New() {
 
   return (
     <>
-      <p>Add A New Item:</p>
-      <form id="newItemForm" onSubmit={addNewItem}>
+      <p>Add a new Todo:</p>
+      <form id="newItemForm" onSubmit={addAddTodoItem}>
         <input type="text" id="name" value={todoTitle} onChange={(e) => setTitle(e.target.value)}/>
         <label>Item Title</label> <br></br>
         <input type="text" id="quantity" value={todoDescription} onChange={(e) => setDescription(e.target.value)}/>
@@ -37,6 +37,6 @@ function New() {
   );
   }
 
-export default New;
+export default AddTodo;
 
 
