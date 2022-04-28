@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useParams} from "react-router-dom";
-function todos() {
-  const [todos, settodos] = useState([]);
+function Todos() {
+  const [todos, setTodos] = useState([]);
   const {project_id} = useParams();
   const {_id} = useParams();
 
@@ -9,7 +9,7 @@ function todos() {
   useEffect(() => {
     fetch(`http://localhost:8000/projects/${project_id}/todos`)
       .then((body) => body.json())
-      .then((json) => settodos(() => [...json]));
+      .then((json) => setTodos(() => [...json]));
   }, [project_id, _id]);
 
   return (
@@ -26,4 +26,4 @@ function todos() {
   );
 }
 
-export default todos;
+export default Todos;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-function projects() {
+function Projects() {
   const [Projects, setProjects] = useState([]);
 
   //Analogous to ComponentDidMount; runs on component's mount and first render; runs once
