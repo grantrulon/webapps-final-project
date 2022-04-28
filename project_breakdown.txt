@@ -39,6 +39,7 @@ Grant:
     -> backend, all database requests
 
 Colby:
+    -> finish setting up environment
     -> frontend, AddProject.js functionality
 
 
