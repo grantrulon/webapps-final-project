@@ -20,7 +20,7 @@ Whats left to do for the whole project:
         - AddProject.js
             - /projects/add 
         - EditProject.js    
-            - /projects/edit
+            - /projects/:project_id/edit
         - Todos.js
             - /:project_id
             - /:project_id/todos

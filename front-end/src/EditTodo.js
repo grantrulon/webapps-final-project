@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 function EditTodo() {
-  const [todoTitle, setTitle] = useState();
-  const [todoDescription, setDescription] = useState();
-  const [todoCompleted, setCompleted] = useState();
+  const [todoNewTitle, setTitle] = useState();
+  const [todoNewDescription, setDescription] = useState();
+  const [todoNewCompleted, setCompleted] = useState();
   const [todo_id, setId] = useState();
+  const {todoTitle} = useParams();
+  const {todoDescription} = useParams();
+  const {todoCompleted} = useParams();
   const {project_id} = useParams();
 
   function EditTodo(e){
     e.preventDefault();
-    fetch(`http://localhost:8000/projects/${project_id}/todos/`, {
+    fetch(`http://localhost:8000/projects/${project_id}/todos/:todo_id/edit`, {
       method: "PATCH",
-      body: JSON.stringify({name: todoTitle, quantity: Number(todoDescription), price: Number(todoCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
+      body: JSON.stringify({name: todoNewTitle, quantity: Number(todoNewDescription), price: Number(todoNewCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
@@ -22,7 +25,17 @@ function EditTodo() {
   return (
     <>
       <p>Edit a Todo object:</p>
-
+      <form id="newItemForm" onSubmit={AddTodo}>
+        <input type="text" id="name" value={todoTitle} onChange={(e) => setTitle(e.target.value)}/>
+        <label>Item Title</label> <br></br>
+        <input type="text" id="quantity" value={todoDescription} onChange={(e) => setDescription(e.target.value)}/>
+        <label>Item Description</label> <br></br>
+        <input type="text" id="price" value={todoCompleted} onChange={(e) => setCompleted(e.target.value)}/>
+        <label>Item Completed</label> <br></br>
+        <input type="text" id="todo_id" value={todo_id} onChange={(e) => setId(e.target.value)}/>
+        <label>Item Id</label> <br></br>
+        <button type="submit">Add</button>
+      </form>
     </>
   );
   }
