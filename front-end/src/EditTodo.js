@@ -25,7 +25,7 @@ function EditTodo() {
   return (
     <>
       <p>Edit a Todo object:</p>
-      <form id="newItemForm" onSubmit={AddTodo}>
+      <form id="newItemForm" onSubmit={EditTodo}>
         <input type="text" id="name" value={todoTitle} onChange={(e) => setTitle(e.target.value)}/>
         <label>Item Title</label> <br></br>
         <input type="text" id="quantity" value={todoDescription} onChange={(e) => setDescription(e.target.value)}/>
