@@ -7,7 +7,7 @@ function AddProject() {
 
   function AddProject(e){
     e.preventDefault();
-    fetch(`http://localhost:8000/projects/${project_id}/todos/`, {
+    fetch(`http://localhost:8000/projects/`, {
       method: "POST",
       body: JSON.stringify({title: projectTitle, project_id: Number(project_id)}),
       mode: 'cors',
