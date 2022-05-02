@@ -16,7 +16,7 @@ function Projects() {
       <ul>
         {Projects.map((a_project) => (
           <li key={a_project.project_id}>
-            <p>{a_project.name}</p>
+            <p>{a_project.title}</p>
           </li>
         ))}
       </ul>

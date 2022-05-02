@@ -8,6 +8,7 @@ import cors from "cors";
 import { projectsRouter } from "./routes/projects.js";
 import { todosRouter } from "./routes/todos.js";
 import connect from "./lib/db.js";
+import cors from "cors";
 
 const app = express();
 
