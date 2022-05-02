@@ -24,7 +24,7 @@ function AddProject() {
         <input type="text" id="name" value={projectTitle} onChange={(e) => setTitle(e.target.value)}/>
         <label>Project Title</label> <br></br>
         <input type="text" id="project_id" value={project_id} onChange={(e) => setId(e.target.value)}/>
-        <label>Item Id</label> <br></br>
+        <label>Project Id</label> <br></br>
         <button type="submit">Add</button>
       </form>
     </>

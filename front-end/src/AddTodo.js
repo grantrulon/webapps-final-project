@@ -22,15 +22,15 @@ function AddTodo() {
   return (
     <>
       <p>Add a new Todo:</p>
-      <form id="newItemForm" onSubmit={AddTodo}>
+      <form id="newTodoForm" onSubmit={AddTodo}>
         <input type="text" id="name" value={todoTitle} onChange={(e) => setTitle(e.target.value)}/>
-        <label>Item Title</label> <br></br>
+        <label>Todo Title</label> <br></br>
         <input type="text" id="quantity" value={todoDescription} onChange={(e) => setDescription(e.target.value)}/>
-        <label>Item Description</label> <br></br>
+        <label>Todo Description</label> <br></br>
         <input type="text" id="price" value={todoCompleted} onChange={(e) => setCompleted(e.target.value)}/>
-        <label>Item Completed</label> <br></br>
+        <label>Todo Completed</label> <br></br>
         <input type="text" id="todo_id" value={todo_id} onChange={(e) => setId(e.target.value)}/>
-        <label>Item Id</label> <br></br>
+        <label>Todo Id</label> <br></br>
         <button type="submit">Add</button>
       </form>
     </>

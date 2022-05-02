@@ -6,7 +6,7 @@ function Todo() {
   const {todo_id} = useParams();
   //Analogous to ComponentDidMount; runs on component's mount and first render; runs once
   useEffect(() => {
-    fetch(`http://localhost:8000/stores/${project_id}/items/${todo_id}`)
+    fetch(`http://localhost:8000/projects/${project_id}/todos/${todo_id}`)
       .then((body) => body.json())
       .then((json) => setTodo(() => json));
       console.log(todo.name);

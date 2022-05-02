@@ -38,13 +38,22 @@ function App() {
           <Route path="/" element={<Projects />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projects/add" element={<AddProject />} />
+          <Route path="/add" element={<AddProject />} />
           <Route path="projects/:project_id">
             <Route path="" element={<Todos />} />
             <Route path="edit" element={<EditProject />} />
             <Route path="todos" element={<Todos />} />
             <Route path="todos/:todo_id" element={<Todo />} />
             <Route path="todos/:todo_id/edit" element={<EditTodo />} />
-            <Route path="todos/new" element={<AddTodo />} />
+            <Route path="todos/add" element={<AddTodo />} />
+          </Route>
+          <Route path="/:project_id">
+            <Route path="" element={<Todos />} />
+            <Route path="edit" element={<EditProject />} />
+            <Route path="todos" element={<Todos />} />
+            <Route path="todos/:todo_id" element={<Todo />} />
+            <Route path="todos/:todo_id/edit" element={<EditTodo />} />
+            <Route path="todos/add" element={<AddTodo />} />
           </Route>
         </Routes>
       </BrowserRouter>

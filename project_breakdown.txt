@@ -34,6 +34,7 @@ Whats left to do for the whole project:
 To be done before Monday 5/2/22
 Heather:
     -> frontend, EditProject.js and EditTodo.js functionality
+        -> COMPLETED
 
 Grant:
     -> backend, all database requests
