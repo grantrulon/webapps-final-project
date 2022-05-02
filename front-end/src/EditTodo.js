@@ -14,7 +14,7 @@ function EditTodo() {
     e.preventDefault();
     fetch(`http://localhost:8000/projects/${project_id}/todos/:todo_id/edit`, {
       method: "PATCH",
-      body: JSON.stringify({name: todoNewTitle, quantity: Number(todoNewDescription), price: Number(todoNewCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
+      body: JSON.stringify({title: todoNewTitle, quantity: Number(todoNewDescription), price: Number(todoNewCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'

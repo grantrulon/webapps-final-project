@@ -19,7 +19,7 @@ function Project() {
       <ul>
         {todos.map((todo) => (
           <a href="/projects/project_id" onclick="location.href=this.href+'/project_id';return false;"><li key={todos.todo_id}>
-            <p>{todo.name}</p>
+            <p>{todo.title}</p>
           </li> </a>
         ))}
       </ul>
