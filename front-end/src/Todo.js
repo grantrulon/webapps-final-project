@@ -12,13 +12,23 @@ function Todo() {
       console.log(todo.name);
   }, [project_id, todo_id]);
 
+  function checkCompleted(todoCompleted) {
+    if (todoCompleted) {
+      return "yes"
+    }
+    else {
+      return "no"
+    }
+  }
+
+
   return (
     <>
       <p>Hello this is project {project_id}'s todo {todo_id} route</p>
       <ul>
-        <li><p>Todo Name: {todo.name}</p></li>
-        <li><p>Todo Quantity: {todo.quantity}</p></li>
-        <li><p>Todo Price: {todo.price}</p></li>
+        <li><p>Todo Title: {todo.title}</p></li>
+        <li><p>Todo Description: {todo.description}</p></li>
+        <li><p>Todo Completed: {checkCompleted(todo.completed)}</p></li>
       </ul>
     </>
   );

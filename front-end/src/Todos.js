@@ -18,7 +18,7 @@ function Todos() {
       <ul>
         {todos.map((todo) => (
           <li key={todos._id}>
-            <p>{todo.name}</p>
+            <p>{todo.title}</p>
           </li>
         ))}
       </ul>

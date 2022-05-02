@@ -5,14 +5,14 @@ const router = express.Router();
 /* GET projects/:project_id/todos */
 router.get("/", async function (req, res, next) {
   const db = await req.app.get('db')('todos');
-  const data = await db.find({ project_id: parseInt(req.params.project_id) }).toArray();
+  const data = await db.find({project_id: Number(req.params.project_id)}).toArray();
   res.json(data);
 });
 
 /* GET projects/:project_id/todos/:todo_id */
 router.get("/:todo_id", async function (req, res, next) {
   const db = await req.app.get('db')('todos');
-  const data = await db.find({ todo_id: parseInt(req.params.todo_id) }).toArray();
+  const data = await db.findOne({ todo_id: parseInt(req.params.todo_id) });
   res.json(data);
 });
 

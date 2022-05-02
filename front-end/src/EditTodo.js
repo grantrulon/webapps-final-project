@@ -4,17 +4,22 @@ function EditTodo() {
   const [todoNewTitle, setTitle] = useState();
   const [todoNewDescription, setDescription] = useState();
   const [todoNewCompleted, setCompleted] = useState();
-  const [todo_id, setId] = useState();
-  const {todoTitle} = useParams();
-  const {todoDescription} = useParams();
-  const {todoCompleted} = useParams();
+  const [old_todo, setTodo] = useState({});
+  const {todo_id} = useParams();
   const {project_id} = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/projects/${project_id}/todos/${todo_id}`)
+      .then((body) => body.json())
+      .then((json) => setTodo(() => json));
+      console.log(old_todo)
+  }, [todo_id, project_id]);
 
   function EditTodo(e){
     e.preventDefault();
-    fetch(`http://localhost:8000/projects/${project_id}/todos/:todo_id/edit`, {
+    fetch(`http://localhost:8000/projects/${project_id}/todos/:todo_id/`, {
       method: "PATCH",
-      body: JSON.stringify({title: todoNewTitle, quantity: Number(todoNewDescription), price: Number(todoNewCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
+      body: JSON.stringify({title: todoNewTitle, description: Number(todoNewDescription), completed: Number(todoNewCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
@@ -26,15 +31,13 @@ function EditTodo() {
     <>
       <p>Edit a Todo object:</p>
       <form id="newTodoForm" onSubmit={EditTodo}>
-        <input type="text" id="name" value={todoTitle} onChange={(e) => setTitle(e.target.value)}/>
+        <input type="text" id="title" defaultValue={old_todo.title} onChange={(e) => setTitle(e.target.value)}/>
         <label>Todo Title</label> <br></br>
-        <input type="text" id="quantity" value={todoDescription} onChange={(e) => setDescription(e.target.value)}/>
+        <input type="text" id="description" defaultValue={old_todo.description} onChange={(e) => setDescription(e.target.value)}/>
         <label>Todo Description</label> <br></br>
-        <input type="text" id="price" value={todoCompleted} onChange={(e) => setCompleted(e.target.value)}/>
+        <input type="text" id="completed" defaultValue={old_todo.completed} onChange={(e) => setCompleted(e.target.value)}/>
         <label>Todo Completed</label> <br></br>
-        <input type="text" id="todo_id" value={todo_id} onChange={(e) => setId(e.target.value)}/>
-        <label>Todo Id</label> <br></br>
-        <button type="submit">Add</button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );

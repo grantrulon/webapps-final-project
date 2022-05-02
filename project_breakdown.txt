@@ -1,16 +1,7 @@
 Whats left to do for the whole project:
- - backend 
-    - todo routes
-        - GET
-        - POST
-        - PUT 
-        - DELETE
-        - PATCH
  frontend
-    - functionaly
-        - AddProject.js
-        - EditProject.js
-        - EditTodo.js
+    - CSS
+        - 10 CSS stuff
     - user interface - stuff to make pretty
         - Projects.js
             - /
@@ -33,15 +24,13 @@ Whats left to do for the whole project:
 
 To be done before Monday 5/2/22
 Heather:
-    -> frontend, EditProject.js and EditTodo.js functionality
-        -> COMPLETED
+   
 
 Grant:
-    -> backend, all database requests
+   
 
 Colby:
-    -> finish setting up environment
-    -> frontend, AddProject.js functionality
+
 
 
 

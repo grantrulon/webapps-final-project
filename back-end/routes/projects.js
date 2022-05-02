@@ -1,6 +1,10 @@
 import express from "express";
+import { todosRouter } from "./todos.js";
 
 const router = express.Router();
+todosRouter.mergeParams = true;
+router.use("/projects/:project_id/todos", todosRouter);
+
 
 /* GET /projects */
 router.get("/", async function (req, res, next) {
@@ -45,6 +49,13 @@ router.delete("/:project_id", async function (req, res) {
   });
 
   res.sendStatus(200);
+});
+
+/* PATCH /Pprojects/:project_id */
+router.patch("/:project_id", async function (req, res) {
+  const db = await req.app.get("db")("projects");
+  await db.updateOne({ project_id: parseInt(req.params.project_id) }, { $set: req.body });
+  res.status(200);
 });
 
 
