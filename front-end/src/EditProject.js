@@ -22,7 +22,7 @@ function EditProject() {
       <p>Edit a Project Title:</p>
       <form id="editProjectForm" onSubmit={EditProject}>
         <input type="text" id="title" value={projectTitle} onChange={(e) => setTitle(e.target.value)}/>
-        <label>Item Title</label> <br></br>
+        <label>Project Title</label> <br></br>
       </form>
     </>
   );

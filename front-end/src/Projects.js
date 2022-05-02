@@ -5,7 +5,7 @@ function Projects() {
 
   //Analogous to ComponentDidMount; runs on component's mount and first render; runs once
   useEffect(() => {
-    fetch(`http://localhost:8000/Projects`)
+    fetch(`http://localhost:8000/projects`)
       .then((body) => body.json())
       .then((json) => setProjects(() => [...json]));
   }, []);
