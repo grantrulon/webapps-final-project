@@ -7,6 +7,7 @@ import logger from "morgan";
 import { projectsRouter } from "./routes/projects.js";
 import { todosRouter } from "./routes/todos.js";
 import connect from "./lib/db.js";
+import cors from "cors";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.set("db", async (collection) => {
   return mongo.db("projects_todos").collection(collection);
 });
 
+app.use(cors())
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
