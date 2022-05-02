@@ -3,6 +3,7 @@ import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
+import cors from "cors";
 
 import { projectsRouter } from "./routes/projects.js";
 import { todosRouter } from "./routes/todos.js";
@@ -15,6 +16,7 @@ app.set("db", async (collection) => {
   return mongo.db("projects_todos").collection(collection);
 });
 
+app.use(cors())
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
