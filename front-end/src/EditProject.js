@@ -21,6 +21,7 @@ function EditProject() {
         'Content-Type': 'application/json'
       }
     })
+    window.location.replace(`/`);
   }
 
   return (

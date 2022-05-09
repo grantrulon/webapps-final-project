@@ -14,11 +14,19 @@ function Todo() {
 
   function checkCompleted(todoCompleted) {
     if (todoCompleted) {
-      return "yes"
+      return "True"
     }
     else {
-      return "no"
+      return "False"
     }
+  }
+
+  function deleteTodo() {
+    fetch(`http://localhost:8000/projects/${project_id}/todos/${todo_id}`, {
+      method: "DELETE",
+      mode: 'cors'
+    });
+    window.location.replace(`/${project_id}/todos/`);
   }
 
 
@@ -30,6 +38,7 @@ function Todo() {
         <li><p>Todo Description: {todo.description}</p></li>
         <li><p>Todo Completed: {checkCompleted(todo.completed)}</p></li>
       </ul>
+      <button type="submit" onClick={deleteTodo}>Delete Todo</button>
     </>
   );
 }

@@ -12,6 +12,18 @@ function Todos() {
       .then((json) => setTodos(() => [...json]));
   }, [project_id, _id]);
 
+  function routeAdd() {
+    window.location.replace(`/${project_id}/todos/add`);
+  }
+
+  function deleteProject() {
+    fetch(`http://localhost:8000/projects/${project_id}`, {
+      method: "DELETE",
+      mode: 'cors'
+    });
+    window.location.replace(`/`);
+  }
+
   return (
     <>
       <p>Hello this is project {project_id}'s todos route</p>
@@ -22,6 +34,8 @@ function Todos() {
           </li>
         ))}
       </ul>
+      <button type="submit" onClick={routeAdd}>Add Todo</button>
+      <button type="submit" onClick={deleteProject}>Delete Project</button>
     </>
   );
 }

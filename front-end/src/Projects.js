@@ -10,6 +10,10 @@ function Projects() {
       .then((json) => setProjects(() => [...json]));
   }, []);
 
+  function addProject() {
+    window.location.replace(`/add`);
+  }
+
   return (
     <>
       <p>Hello this is Projects route</p>
@@ -20,6 +24,7 @@ function Projects() {
           </li>
         ))}
       </ul>
+      <button type="submit" onClick={addProject}>Add Project</button>
     </>
   );
 }

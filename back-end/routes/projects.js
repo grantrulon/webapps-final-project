@@ -44,9 +44,13 @@ router.put("/:project_id", async function (req, res) {
 /* DELETE /projects/:project_id */
 router.delete("/:project_id", async function (req, res) {
   const db = await req.app.get('db')('projects');
+  const db2 = await req.app.get('db')('todos');
   db.deleteOne({
       project_id: parseInt(req.params.project_id)
   });
+  db2.deleteMany({
+    project_id: parseInt(req.params.project_id)
+});
 
   res.sendStatus(200);
 });

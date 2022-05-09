@@ -25,6 +25,7 @@ function EditTodo() {
         'Content-Type': 'application/json'
       }
     })
+    window.location.replace(`/${project_id}/todos`);
   }
 
   return (

@@ -11,12 +11,13 @@ function AddTodo() {
     e.preventDefault();
     fetch(`http://localhost:8000/projects/${project_id}/todos/`, {
       method: "POST",
-      body: JSON.stringify({title: todoTitle, quantity: Number(todoDescription), price: Number(todoCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
+      body: JSON.stringify({title: todoTitle, description: todoDescription, completed: Boolean(todoCompleted), todo_id: Number(todo_id), project_id: Number(project_id)}),
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       }
     })
+    window.location.replace(`/${project_id}/todos/${todo_id}`);
   }
 
   return (
@@ -28,7 +29,7 @@ function AddTodo() {
         <input type="text" id="quantity" value={todoDescription} onChange={(e) => setDescription(e.target.value)}/>
         <label>Todo Description</label> <br></br>
         <input type="text" id="price" value={todoCompleted} onChange={(e) => setCompleted(e.target.value)}/>
-        <label>Todo Completed</label> <br></br>
+        <label>Todo Completed (True/False)</label> <br></br>
         <input type="text" id="todo_id" value={todo_id} onChange={(e) => setId(e.target.value)}/>
         <label>Todo Id</label> <br></br>
         <button type="submit">Add</button>

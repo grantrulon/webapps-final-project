@@ -15,6 +15,7 @@ function AddProject() {
         'Content-Type': 'application/json'
       }
     })
+    window.location.replace(`/${project_id}/`);
   }
 
   return (
