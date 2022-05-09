@@ -9,6 +9,8 @@ import AddProject from "./AddProject";
 import AddTodo from "./AddTodo";
 import EditProject from "./EditProject";
 import EditTodo from "./EditTodo";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
         - EditTodo.js
             - /project_id/todos/:todo_id/edit
      */}
+     <Header/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Projects />} />
@@ -57,6 +60,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+    <Footer/>
     </>
   );
 }

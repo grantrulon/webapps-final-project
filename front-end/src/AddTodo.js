@@ -22,6 +22,7 @@ function AddTodo() {
 
   return (
     <>
+    <div>
       <p>Add a new Todo:</p>
       <form id="newTodoForm" onSubmit={AddTodo}>
         <input type="text" id="name" value={todoTitle} onChange={(e) => setTitle(e.target.value)}/>
@@ -34,6 +35,7 @@ function AddTodo() {
         <label>Todo Id</label> <br></br>
         <button type="submit">Add</button>
       </form>
+      </div>
     </>
   );
   }

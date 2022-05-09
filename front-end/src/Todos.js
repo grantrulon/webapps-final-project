@@ -26,6 +26,7 @@ function Todos() {
 
   return (
     <>
+    <div>
       <p>Hello this is project {project_id}'s todos route</p>
       <ul>
         {todos.map((todo) => (
@@ -36,6 +37,7 @@ function Todos() {
       </ul>
       <button type="submit" onClick={routeAdd}>Add Todo</button>
       <button type="submit" onClick={deleteProject}>Delete Project</button>
+      </div>
     </>
   );
 }

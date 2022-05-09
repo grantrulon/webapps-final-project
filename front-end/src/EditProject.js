@@ -26,12 +26,14 @@ function EditProject() {
 
   return (
     <>
+    <div>
       <p>Edit a Project Title:</p>
       <form id="editProjectForm" onSubmit={EditProject}>
         <input type="text" id="title" defaultValue={old_project.title} onChange={(e) => setTitle(e.target.value)}/>
         <label>Project Title</label> <br></br>
         <button type="submit">Submit</button>
       </form>
+      </div>
     </>
   );
   }

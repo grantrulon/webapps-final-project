@@ -1,35 +1,12 @@
 Whats left to do for the whole project:
  frontend
     - CSS
-        - 10 CSS stuff
-    - user interface - stuff to make pretty
-        - Projects.js
-            - /
-            - /projects
-        - Project.js
-            - /:project_id
-        - AddProject.js
-            - /projects/add 
-        - EditProject.js    
-            - /projects/:project_id/edit
-        - Todos.js
-            - /:project_id
-            - /:project_id/todos
-        - Todo.js
-            - /:project_id/todos/:todo_id
-        - AddTodo.js
-            - /:project_id/todos/add
-        - EditTodo.js
-            - /project_id/todos/:todo_id/edit
+        - Done in front-end/src/index.js
+    - Front-end
+        - Done
+    - Back-end
+        -Done
 
-To be done before Monday 5/2/22
-Heather:
-   
-
-Grant:
-   
-
-Colby:
 
 
 

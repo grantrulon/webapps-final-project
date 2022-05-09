@@ -30,6 +30,7 @@ function EditTodo() {
 
   return (
     <>
+    <div>
       <p>Edit a Todo object:</p>
       <form id="newTodoForm" onSubmit={EditTodo}>
         <input type="text" id="title" defaultValue={old_todo.title} onChange={(e) => setTitle(e.target.value)}/>
@@ -40,6 +41,7 @@ function EditTodo() {
         <label>Todo Completed</label> <br></br>
         <button type="submit">Submit</button>
       </form>
+      </div>
     </>
   );
   }

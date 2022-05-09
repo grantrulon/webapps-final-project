@@ -16,15 +16,17 @@ function Projects() {
 
   return (
     <>
-      <p>Hello this is Projects route</p>
-      <ul>
-        {Projects.map((a_project) => (
-          <li key={a_project.project_id}>
-            <p>{a_project.title}</p>
-          </li>
-        ))}
-      </ul>
-      <button type="submit" onClick={addProject}>Add Project</button>
+      <div>
+        <p>Hello this is Projects route</p>
+        <ul>
+          {Projects.map((a_project) => (
+            <li key={a_project.project_id}>
+              <p>{a_project.title}</p>
+            </li>
+          ))}
+        </ul>
+        <button type="submit" onClick={addProject}>Add Project</button>
+      </div>
     </>
   );
 }

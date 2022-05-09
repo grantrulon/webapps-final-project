@@ -5,6 +5,7 @@ function Project() {
   const {project_id} = useParams();
   const {todo_id} = useParams();
 
+
   //Analogous to ComponentDidMount; runs on component's mount and first render; runs once
   useEffect(() => {
     fetch(`http://localhost:8000/projects/${project_id}/todos`)
@@ -16,9 +17,9 @@ function Project() {
 
   return (
     <>
+    <div>
       <p>Hello this is project {project_id}'s todos route</p>
       <ul>
-
         {Todos.map((a_todo) => (
           <a href="/projects/project_id" onclick="location.href=this.href+'/project_id';return false;">
             <li key={a_todo.todo_id}>
@@ -26,6 +27,7 @@ function Project() {
           </li> </a>
         ))}
       </ul>
+      </div>
     </>
   );
 }

@@ -32,6 +32,7 @@ function Todo() {
 
   return (
     <>
+    <div>
       <p>Hello this is project {project_id}'s todo {todo_id} route</p>
       <ul>
         <li><p>Todo Title: {todo.title}</p></li>
@@ -39,6 +40,7 @@ function Todo() {
         <li><p>Todo Completed: {checkCompleted(todo.completed)}</p></li>
       </ul>
       <button type="submit" onClick={deleteTodo}>Delete Todo</button>
+      </div>
     </>
   );
 }

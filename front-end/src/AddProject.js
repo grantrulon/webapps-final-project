@@ -20,6 +20,7 @@ function AddProject() {
 
   return (
     <>
+    <div>
       <p>Add a new Project:</p>
       <form id="newProjectForm" onSubmit={AddProject}>
         <input type="text" id="name" value={projectTitle} onChange={(e) => setTitle(e.target.value)}/>
@@ -28,6 +29,7 @@ function AddProject() {
         <label>Project Id</label> <br></br>
         <button type="submit">Add</button>
       </form>
+      </div>
     </>
   );
   }
